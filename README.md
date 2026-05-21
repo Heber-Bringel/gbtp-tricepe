@@ -162,13 +162,9 @@ O servidor deverá validar:
   - Configurar o ambiente TypeScript.
   - Implementar o servidor WebSocket.
   - Gerenciar conexões ativas dos clientes.
-  - Receber e rotear mensagens brutas.
   - Criar o script de inicialização do projeto.
   - Criar a base de contas fictícias iniciais.
-* **Arquivos sugeridos:**
-  - `src/server.ts`
-  - `src/websocket/socket.ts`
-  - `src/config/accounts.ts`
+
 * **Entregas:**
   - Servidor funcional.
   - Comunicação WebSocket ativa e estável.
@@ -180,25 +176,19 @@ O servidor deverá validar:
   - Validar a formatação do protocolo textual.
   - Implementar a serialização das respostas (`objeto -> string`).
   - Definir tipos e interfaces TypeScript para o protocolo.
-* **Arquivos sugeridos:**
-  - `src/protocol/parser.ts`
-  - `src/protocol/serializer.ts`
-  - `src/types/protocol.ts`
+
 * **Entregas:**
   - Parser robusto e livre de falhas de formatação.
   - Tratamento correto de erros de sintaxe no protocolo.
   - Conversão bidirecional garantida (Request/Response).
 
-### 👨‍💻 Mikaelle Barroso — Regras Bancárias e Operações
+### 👨‍💻 Pessoa 3 — Regras Bancárias e Operações
 * **Responsabilidades:**
   - Implementar o núcleo das operações bancárias.
   - Gerenciar os saldos dos clientes em memória.
   - Implementar as validações e regras de negócio.
   - Criar a lógica de respostas para: `BALANCE`, `DEPOSIT`, `WITHDRAW` e `TRANSFER`.
-* **Arquivos sugeridos:**
-  - `src/services/bank.service.ts`
-  - `src/services/operations.ts`
-  - `src/utils/validations.ts`
+
 * **Entregas:**
   - Lógica bancária e regras de negócio perfeitamente integradas.
   - Respostas padronizadas e validadas conforme o protocolo.
@@ -225,13 +215,11 @@ graph TD
 gabio-server/
 │
 ├── src/
-│   ├── config/
-│   ├── protocol/
-│   ├── services/
-│   ├── types/
-│   ├── utils/
-│   ├── websocket/
-│   └── server.ts
+│   ├── comunicacao/
+│   ├── data/
+│   ├── protocolo/
+│   ├── regras-de-negocio/
+│   └── main.ts
 │
 ├── package.json
 ├── tsconfig.json
@@ -247,28 +235,14 @@ gabio-server/
 npm install
 ```
 
-### 2. Executar em modo de desenvolvimento
-```bash
-npm run dev
-```
-
-### 3. Compilar o projeto (Build)
+### 2. Compilar o projeto (Build)
 ```bash
 npm run build
 ```
 
-### 4. Executar em modo de produção
+### 3. Executar em modo de produção
 ```bash
 npm start
-```
-
-### 📦 Dependências Recomendadas
-```bash
-# Produção
-npm install ws
-
-# Desenvolvimento
-npm install -D typescript ts-node-dev @types/ws
 ```
 
 ---
