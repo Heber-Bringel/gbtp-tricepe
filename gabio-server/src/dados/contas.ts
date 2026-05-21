@@ -6,5 +6,5 @@ export type Conta = {
 export const contas: Conta[] = [
     { id: 1001, saldo: 500 },
     { id: 1002, saldo: 300 },
-    { id: 1003, saldo: 100 }
+    { id: 1003, saldo: 1000 }
 ];
