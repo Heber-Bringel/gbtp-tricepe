@@ -1,4 +1,4 @@
-# README - Gabio Bank Transaction Protocol (GBTP)
+# Gabio Bank Transaction Protocol (GBTP)
 
 ## 📚 Disciplina
 Redes de Computadores
@@ -6,8 +6,7 @@ Redes de Computadores
 ## 👨‍🏫 Projeto
 Implementação do protocolo **GBTP (Gabio Bank Transaction Protocol)** utilizando **WebSockets**, com arquitetura cliente-servidor em TypeScript.
 
-# 🏦 Gabio Bank
-
+## 🏦 Gabio Bank
 Sistema bancário simplificado desenvolvido para demonstrar conceitos de:
 
 - Protocolos da Camada de Aplicação
@@ -19,24 +18,12 @@ Sistema bancário simplificado desenvolvido para demonstrar conceitos de:
 
 ---
 
-# 🧩 Estrutura do Projeto
-
-```txt
-/gabio-client
-    Cliente Web em HTML + TypeScript
-
-/gabio-server
-    Servidor Node.js + TypeScript
-
-README.md
-    Documentação do protocolo e instruções
-```
+## 📌 Este repositório
+Este repositório contém somente o backend (**gabio-server**). O cliente pode ser implementado separadamente, seguindo o protocolo descrito abaixo.
 
 ---
 
-## 🌐 Tecnologias Utilizadas
-
-### Backend
+## 🌐 Tecnologias Utilizadas (Backend)
 - **Node.js**
 - **TypeScript**
 - **WebSocket (ws)**
@@ -154,7 +141,7 @@ O servidor deverá validar:
 
 ---
 
-## 👥 Divisão do Backend (Sugerido para 3 Pessoas)
+## 👥 Integrantes da Equipe
 
 ### 👨‍💻 Héber Bringel — Infraestrutura WebSocket + Servidor
 * **Responsabilidades:**
@@ -195,32 +182,22 @@ O servidor deverá validar:
 
 ---
 
-## 🔄 Fluxo Geral do Sistema
+## 🔄 Fluxo Geral do Backend
 
-```mermaid
-graph TD
-    A[Cliente Web] -->|Requisição GBTP Textual| B(WebSocket Server)
-    B -->|Dados Brutos| C[Parser GBTP]
-    C -->|Objeto TypeScript| D[Lógica Bancária & Regras]
-    D -->|Objeto de Resposta| E[Serializer GBTP]
-    E -->|Resposta GBTP Textual| B
-    B -->|Mensagem Formatada| A
-```
+Cliente (externo) → WebSocket Server → Parser GBTP → Regras de Negócio → Serializer GBTP → Resposta via WebSocket
 
 ---
 
-## 📂 Estrutura Recomendada do Backend
+## 📂 Estrutura do Projeto (Backend)
 
 ```txt
 gabio-server/
-│
 ├── src/
 │   ├── comunicacao/
-│   ├── data/
+│   ├── dados/
 │   ├── protocolo/
 │   ├── regras-de-negocio/
 │   └── main.ts
-│
 ├── package.json
 ├── tsconfig.json
 └── README.md
