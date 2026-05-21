@@ -230,17 +230,22 @@ gabio-server/
 
 ## ▶️ Como Executar o Backend
 
-### 1. Instalar dependências
+### 1. Entrar no diretório do projeto
+```bash
+cd gabio-server
+```
+
+### 2. Instalar dependências
 ```bash
 npm install
 ```
 
-### 2. Compilar o projeto (Build)
+### 3. Compilar o projeto (Build)
 ```bash
 npm run build
 ```
 
-### 3. Executar em modo de produção
+### 4. Executar em modo de produção
 ```bash
 npm start
 ```
